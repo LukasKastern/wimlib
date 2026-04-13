@@ -64,7 +64,7 @@ rol32(u32 v, int bits)
  * the compiler from making counter-productive optimizations when there aren't
  * enough registers available to hold the full array.
  */
-#define FORCE_NOT_CACHED(array)	asm volatile("" : "+m" (array))
+#define FORCE_NOT_CACHED(array)	__asm__ volatile("" : "+m" (array))
 
 /*
  * Expands to FORCE_NOT_CACHED() if the architecture has 16 or fewer general

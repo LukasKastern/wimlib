@@ -44,6 +44,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #include "wimlib/apply.h"
 #include "wimlib/assert.h"
@@ -403,7 +404,7 @@ retry:
 #else /* _WIN32 */
 	const char *tmpdir = getenv("TMPDIR");
 	if (!tmpdir)
-		tmpdir = P_tmpdir;
+		tmpdir = "/tmp";
 	name = MALLOC(strlen(tmpdir) + 1 + 6 + 6 + 1);
 	if (!name)
 		return WIMLIB_ERR_NOMEM;

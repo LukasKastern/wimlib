@@ -39,6 +39,7 @@
 
 #include <errno.h>
 #include <stdarg.h>
+#include <string.h>
 
 #include "wimlib.h"
 #include "wimlib/error.h"

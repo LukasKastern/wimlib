@@ -28,6 +28,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <strings.h>
 
 #include "wimlib.h"
 #include "wimlib/assert.h"

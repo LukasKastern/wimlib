@@ -5,7 +5,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const lib_wim = b.addLibrary(.{
-        .name = "libwim",
+        .name = "wim",
         .root_module = b.createModule(.{
             .target = target,
             .optimize = optimize,

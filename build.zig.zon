@@ -1,0 +1,12 @@
+.{
+    .name = .LibWim,
+    .paths = .{
+        "src",
+        "include",
+        "build.zig",
+        "build.zig.zon",
+    },
+    .fingerprint = 0x229ab43e76da24c0,
+    .version = "0.1.0",
+    .dependencies = .{},
+}

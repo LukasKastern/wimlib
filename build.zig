@@ -111,6 +111,7 @@ const Flags: []const []const u8 = &.{
     "-DHAVE_ALLOCA_H",
     "-D_POSIX_C_SOURCE",
     "-D_XOPEN_SOURCE",
+    "-D_GNU_SOURCE",
 };
 
 const WinPlatformFiles: []const []const u8 = &.{
@@ -123,4 +124,5 @@ const WinPlatformFiles: []const []const u8 = &.{
 
 const UnixPlatformFiles: []const []const u8 = &.{
     "src/unix_capture.c",
+    "src/unix_apply.c",
 };

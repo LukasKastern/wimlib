@@ -23,6 +23,7 @@
 #  include "config.h"
 #endif
 
+#include <time.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <stdlib.h>

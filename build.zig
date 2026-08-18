@@ -13,7 +13,7 @@ pub fn build(b: *std.Build) void {
     });
 
     // Add source files
-    lib_wim.addCSourceFiles(.{
+    lib_wim.root_module.addCSourceFiles(.{
         .files = &.{
             "src/add_image.c",
             "src/avl_tree.c",
@@ -84,23 +84,23 @@ pub fn build(b: *std.Build) void {
 
     // Add platform specific config
     if (target.result.os.tag == .windows) {
-        lib_wim.addCSourceFiles(.{
+        lib_wim.root_module.addCSourceFiles(.{
             .files = WinPlatformFiles,
             .language = .c,
             .flags = Flags,
         });
-        lib_wim.linkSystemLibrary("ntdll");
+        lib_wim.root_module.linkSystemLibrary("ntdll", .{});
     } else {
-        lib_wim.addCSourceFiles(.{
+        lib_wim.root_module.addCSourceFiles(.{
             .files = UnixPlatformFiles,
             .language = .c,
             .flags = Flags,
         });
     }
-    lib_wim.addIncludePath(b.path("include/"));
+    lib_wim.root_module.addIncludePath(b.path("include/"));
 
     // Link libc
-    lib_wim.linkLibC();
+    lib_wim.root_module.link_libc = true;
 
     b.installArtifact(lib_wim);
 }
